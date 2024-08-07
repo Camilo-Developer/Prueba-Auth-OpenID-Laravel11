@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
-        <form action="{{route('logout')}}" method="post" id="cerrar">
+        <form action="{{route('azure.logout')}}" method="POST" id="cerrar">
             @csrf
         </form>
         <a  style="cursor: pointer;" onclick="document.getElementById('cerrar').submit()">Cerrar Sesion</a>

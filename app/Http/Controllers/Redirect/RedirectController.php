@@ -38,4 +38,12 @@ class RedirectController extends Controller
         }
         return redirect()->route('dashboard');
     }
+
+    public function logout(Request $request) 
+    {
+        Auth::guard()->logout();
+        $request->session()->flush();
+        $azureLogoutUrl = Socialite::driver('azure')->getLogoutUrl(route('login'));
+        return redirect($azureLogoutUrl);
+    }
 }

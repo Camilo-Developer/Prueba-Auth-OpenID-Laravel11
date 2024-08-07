@@ -8,6 +8,7 @@ use App\Http\Controllers\Redirect\RedirectController;
 
 Route::get('/auth/azure', [RedirectController::class, 'azureLogin'])->name('auth.azure');
 Route::get('/auth/azure/callback', [RedirectController::class, 'azureCallback']);
+Route::post('/azure/logout', [RedirectController::class, 'logout'])->name('azure.logout');
 
 
 
